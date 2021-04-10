@@ -115,7 +115,7 @@
 
 .big-name {
   font-size: 40px;
-  color: #2b2b2b;
+  color: #fa9f9d;
 }
 
 .med-text {
@@ -130,10 +130,10 @@
   padding: 20px;
   background-color: #fff;
   border: 1px solid rgb(250, 159, 157);
-  box-shadow: 0 4px 8px 0 rgba(250, 159, 157, 0.6),
+  box-shadow: 0 4px 8px 0 rgba(250, 159, 157, 0.4),
     0 6px 20px 0 rgba(250, 159, 157, 0.6);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(250, 159, 157, 0.6),
-    0 6px 20px 0 rgba(250, 159, 157, 0.2);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(250, 159, 157, 0.1),
+    0 6px 20px 0 rgba(20, 20, 20, 0.4);
   border-radius: 8px;
 }
 
@@ -174,4 +174,37 @@
   margin-top: 100px;
   height: auto;
   width: 90%;
+}
+
+#header-viv {
+  background-image: url('../img/main.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 700px;
+  width: 100%;
+}
+
+.text-index {
+  text-align: center;
+  color: white;
+  margin-top: 250px;
+  font-size: 80px;
+}
+
+#equipe {
+  background-color: #fff;
+  height: 400px;
+}
+
+hr {
+  color: #fff;
 }

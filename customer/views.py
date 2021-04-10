@@ -46,3 +46,6 @@ def login(request):
 
 def equipe(request):
     return render(request, 'equipe.html', {})
+
+def main(request):
+    return render(request, 'index.html', {})
