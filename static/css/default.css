@@ -181,22 +181,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  min-height: 700px;
+  min-height: 600px;
 }
 
 .header-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  min-height: 700px;
+  background-color: rgba(0, 0, 0, 0);
+  min-height: 600px;
   width: 100%;
 }
 
 .text-index {
   text-align: center;
   color: white;
-  margin-top: 250px;
+  margin-top: 150px;
   font-size: 80px;
 }
 
@@ -205,6 +205,10 @@
   height: 400px;
 }
 
+#present {
+  background-color: #cddfb2;
+  min-height: 500px;
+}
 hr {
   color: #fff;
 }
