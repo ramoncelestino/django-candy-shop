@@ -123,9 +123,7 @@
 }
 
 .login-container {
-  width: 30%;
-  margin: auto;
-  margin-top: 200px;
+  margin-top: 100px;
   color: #343a40;
   padding: 20px;
   background-color: #fff;
@@ -143,30 +141,6 @@
 
 .bg-viviane {
   background-color: #fa9f9d;
-}
-
-#image-owner {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-#image-owner-2 {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-#image-owner-3 {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-#image-owner-4 {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
 }
 
 .cont-one {
@@ -211,4 +185,9 @@
 }
 hr {
   color: #fff;
+}
+
+.form-check-input .form-check-input:checked {
+  border-color: #fa9f9d;
+  background-color: #fa9f9d;
 }

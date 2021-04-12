@@ -2,30 +2,51 @@
 
 {% block content %}
 <div class="container h-100">
-    <div class="login-container">
-        <h4 class="pb-2 text-viviane text-center">Login</h4>
-        <form method="POST">
-            <div class="form-group">
-                <label class="text-viviane" for="email">E-mail</label>
-                <input id="email" class="form-control" type="email" placeholder="e-mail">
-            </div>
-            <div class="form-group">
-                <label class="text-viviane" for="password">Senha</label>
-                <input id="password" class="form-control" type="password" placeholder="senha">
-            </div>
-            <div class="form-group">
-                <label class="text-viviane" for="email">E-mail</label>
-                <input id="email" class="form-control" type="email" placeholder="e-mail">
-            </div>
-            <div class="form-group">
-                <button class="btn bg-viviane text-white form-control" type="submit">Entrar</button>
-            </div>
-            <p class="text-center text-viviane">Não possui conta? <span><a href="#test" class="text-viviane">Registre-se</a></span></p>
-        
-        </form>
+    <div class="col-md-4 m-auto">
+        <div class="login-container">
+            <h4 class="pb-2 text-viviane text-center">Login</h4>
+            <form method="POST">
+
+                <div class="form-group">
+                    <label class="text-viviane" for="email">E-mail</label>
+                    <input id="email" class="form-control" type="email" placeholder="e-mail">
+                </div>
+                <div class="form-group">
+                    <label class="text-viviane" for="password">Senha</label>
+                    <input id="password" class="form-control" type="password" placeholder="senha">
+                </div>
+                <div class="form-group">
+                    <label class="text-viviane" for="email">E-mail</label>
+                    <input id="email" class="form-control" type="email" placeholder="e-mail">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="check1">
+                    <label class="form-check-label" for="exampleCheck1">Aceita os termos</label>
+                </div>
+                <div class="form-group">
+                    <button id="login-button" class="btn bg-viviane text-white form-control" type="submit" disabled>Entrar</button>
+                </div>
+                <p class="text-center text-viviane">Não possui conta? <span><a href="#test" class="text-viviane">Registre-se</a></span></p>
+            
+            </form>
+        </div>
     </div>  
 </div>
 
-{% include 'equipe.html' %}
+<script>
+    var check = document.querySelector("#check1");
+    check.addEventListener('click', activateButton);
+
+    function activateButton(){
+        var button = document.querySelector("#login-button");
+
+        if(check.checked){
+            button.disabled = false;
+        }
+        else{
+            button.disabled = true;
+        }
+    }
+</script>
 
 {% endblock %}
