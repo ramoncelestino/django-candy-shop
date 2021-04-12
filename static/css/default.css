@@ -191,3 +191,9 @@ hr {
   border-color: #fa9f9d;
   background-color: #fa9f9d;
 }
+
+.form-block {
+  margin-top: 100px;
+  padding: 10px;
+  border: 1px solid #fa9f9d;
+}

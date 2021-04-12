@@ -1,69 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/default.css' %}">
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 
-        <div class="container">
+<div class="container">
+    <div class="row p-5 m-5">
+        <div class="col-3">
             <div class="row">
-                <div class="col-3">
-                    <div class="row">
-                        <div class="user-card">
-                            <form method="GET" action="/customers/">
-                                <div class="form-group">
-                                    <label for="phoneid" >Celular</label>
-                                    <input type="text" class="form-control"  name="phone" placeholder="Phone">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary form-control">Search</button>
-                                </div>
-                            </form>
+                <div class="user-card">
+                    <form method="GET" action="/customers/">
+                        <div class="form-group">
+                            <label for="phoneid" >Celular</label>
+                            <input type="text" class="form-control"  name="phone" placeholder="Phone">
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="user-card">
-                            <form method="GET" action="/customers/">
-                                <div class="form-group">
-                                    <label for="phoneid" >Celular</label>
-                                    <input type="text" class="form-control"  name="phone" placeholder="Phone">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary form-control">Search</button>
-                                </div>
-                            </form>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary form-control">Search</button>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="user-card">
-                            <form method="GET" action="/customers/">
-                                <div class="form-group">
-                                    <label for="phoneid" >Celular</label>
-                                    <input type="text" class="form-control" id="phoneid" name="phone" placeholder="Phone">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary form-control">Search</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                <div class="col-9">
-                    {% for customer in customers %}
-                        <div class="card card-body">
-                            <p>{{ customer.name}}</p>
-                            <p>{{ customer.endereco.bairro}}</p>
-                            <p>{{ customer.endereco.rua }}</p>
+            </div>
+
+            <div class="row">
+                <div class="user-card">
+                    <form method="GET" action="/customers/">
+                        <div class="form-group">
+                            <label for="phoneid" >Celular</label>
+                            <input type="text" class="form-control"  name="phone" placeholder="Phone">
                         </div>
-                    {% endfor %}
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary form-control">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="user-card">
+                    <form method="GET" action="/customers/">
+                        <div class="form-group">
+                            <label for="phoneid" >Celular</label>
+                            <input type="text" class="form-control" id="phoneid" name="phone" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary form-control">Search</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+        <div class="col-9">
+            {% for customer in customers %}
+                <div class="card card-body">
+                    <p>{{ customer.name}}</p>
+                    <p>{{ customer.endereco.bairro}}</p>
+                    <p>{{ customer.endereco.rua }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
-</body>
-</html>
+{% endblock %}

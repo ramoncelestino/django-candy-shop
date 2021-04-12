@@ -23,13 +23,11 @@ def create_customer(request):
 
     customerForm = CustomerForm()
     if request.method == "POST":
-        customerForm = CustomerForm(request.POST)
+        customerForm = CustomerForm(request.POST or None)
+        if customerForm.is_valid:
+            customerForm.save()
 
     enderecoForm = EnderecoForm()
-    if request.method == "POST":
-        enderecoForm = EnderecoForm(request.POST)
-        if enderecoForm.is_valid():
-            enderecoForm.save()
 
     context = {
         "customerForm": customerForm,
