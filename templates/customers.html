@@ -1,61 +1,51 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container">
-    <div class="row p-5 m-5">
-        <div class="col-3">
-            <div class="row">
-                <div class="user-card">
-                    <form method="GET" action="/customers/">
-                        <div class="form-group">
-                            <label for="phoneid" >Celular</label>
-                            <input type="text" class="form-control"  name="phone" placeholder="Phone">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary form-control">Search</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="user-card">
-                    <form method="GET" action="/customers/">
-                        <div class="form-group">
-                            <label for="phoneid" >Celular</label>
-                            <input type="text" class="form-control"  name="phone" placeholder="Phone">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary form-control">Search</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="user-card">
-                    <form method="GET" action="/customers/">
-                        <div class="form-group">
-                            <label for="phoneid" >Celular</label>
-                            <input type="text" class="form-control" id="phoneid" name="phone" placeholder="Phone">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary form-control">Search</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-9">
-            {% for customer in customers %}
-                <div class="card card-body">
-                    <p>{{ customer.name}}</p>
-                    <p>{{ customer.endereco.bairro}}</p>
-                    <p>{{ customer.endereco.rua }}</p>
-                </div>
-            {% endfor %}
-        </div>
+  <div class="row pt-5 mt-5">
+    <div class="col-md-3">
+      <div class="user-card">
+        <form method="GET" action="/customers/">
+          <div class="form-group">
+            <label for="phoneid">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nome"
+              placeholder="Nome"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phoneid">Celular</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone"
+              placeholder="Celular"
+            />
+          </div>
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn bg-viviane form-control text-white"
+            >
+              Pesquisar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+    <div class="col-md-9">
+      {% for customer in customers %}
+      <div class="card card-body mb-2">
+        <div class="inline-customer">
+          <h5>{{ customer.name}}</h5>
+          <h5>{{ customer.endereco.bairro}}</h5>
+          <h5>{{ customer.endereco.rua }}</h5>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 {% endblock %}

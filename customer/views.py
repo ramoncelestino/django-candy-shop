@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from customer.models import Customer
 from .forms import CustomerForm
 from enderecos.forms import EnderecoForm
+ 
 
 def customers(request):
 
@@ -12,6 +13,11 @@ def customers(request):
         phone = request.GET['phone']
         if phone:
             query_set = Customer.objects.filter(phone_number=phone)
+
+    if 'nome' in request.GET:
+        nome = request.GET['nome']
+        if nome:
+            query_set= Customer.objects.filter(name=nome)
 
     context = {
         "customers": query_set,
@@ -26,6 +32,8 @@ def create_customer(request):
         customerForm = CustomerForm(request.POST or None)
         if customerForm.is_valid:
             customerForm.save()
+            customerForm = CustomerForm()
+            return redirect(customers)
 
     enderecoForm = EnderecoForm()
 

@@ -27,5 +27,5 @@ urlpatterns = [
     path('createcustomer/', views.create_customer),
     path('login/', views.login),
     path('equipe/', views.equipe),
-    path('', views.main),
+    path('', views.main, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
