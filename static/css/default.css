@@ -1,3 +1,7 @@
+body {
+  background-color: #eef3eb;
+}
+
 .center {
   background-color: #fff;
   margin: auto;
@@ -16,18 +20,16 @@
 .user-card {
   margin: auto;
   margin-bottom: 50px;
-  margin-left: 20px;
   background: #fff;
   position: relative;
-  display: flex;
-  justify-content: center;
   padding: 10px;
+  justify-content: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
+  border-radius: 25px;
 }
 
 .customer-info {
@@ -113,7 +115,7 @@
 
 .big-name {
   font-size: 40px;
-  color: #fa9f9d;
+  color: #eaa49c;
 }
 
 .med-text {
@@ -134,11 +136,11 @@
 }
 
 .text-viviane {
-  color: #fa9f9d;
+  color: #eaa49c;
 }
 
 .bg-viviane {
-  background-color: #fa9f9d;
+  background-color: #eaa49c;
 }
 
 .cont-one {
@@ -149,6 +151,7 @@
 }
 
 #header-viv {
+  width: 100%;
   background-image: url('../img/main.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -186,18 +189,42 @@ hr {
 }
 
 .form-check-input .form-check-input:checked {
-  border-color: #fa9f9d;
-  background-color: #fa9f9d;
+  border-color: #eaa49c;
+  background-color: #eaa49c;
 }
 
 .form-block {
   margin-top: 100px;
   padding: 10px;
-  border: 1px solid #fa9f9d;
+  border: 1px solid #eaa49c;
+}
+
+@font-face {
+  font-family: 'Bw Darius';
+  src: url('../fonts/BwDariusDEMO-Regular.otf') format('otf');
 }
 
 .inline-customer {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
+  background-color: #eaa49c;
+  color: #fff;
+  align-items: unset;
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.all-customers {
+  width: 90%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+}
+
+.card-body {
+  background-color: #eaa49c;
+  border-radius: 10px;
 }

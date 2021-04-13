@@ -2,50 +2,80 @@
 
 <div class="container">
   <div class="row pt-5 mt-5">
-    <div class="col-md-3">
+    <div class="col-md-9 m-auto">
       <div class="user-card">
         <form method="GET" action="/customers/">
-          <div class="form-group">
-            <label for="phoneid">Nome</label>
-            <input
-              type="text"
-              class="form-control"
-              name="nome"
-              placeholder="Nome"
-            />
-          </div>
-          <div class="form-group">
-            <label for="phoneid">Celular</label>
-            <input
-              type="text"
-              class="form-control"
-              name="phone"
-              placeholder="Celular"
-            />
-          </div>
-          <div class="form-group">
-            <button
-              type="submit"
-              class="btn bg-viviane form-control text-white"
-            >
-              Pesquisar
-            </button>
+          <div class="form-row">
+            <div class="col-md-8 my-1">
+              <input
+                type="text"
+                class="form-control"
+                name="nome"
+                placeholder="Nome"
+              />
+            </div>
+            <div class="col-md-3 my-1">
+              <input
+                type="text"
+                class="form-control"
+                name="phone"
+                placeholder="Celular"
+              />
+            </div>
+            <div class="col-md-1 my-1">
+              <button
+                type="submit"
+                class="btn bg-viviane form-control text-white"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
           </div>
         </form>
       </div>
     </div>
-    <div class="col-md-9">
+  </div>
+  {% if customers %}
+  <div class="row">
+    <div class="all-customers">
       {% for customer in customers %}
-      <div class="card card-body mb-2">
-        <div class="inline-customer">
-          <h5>{{ customer.name}}</h5>
-          <h5>{{ customer.endereco.bairro}}</h5>
-          <h5>{{ customer.endereco.rua }}</h5>
+      <div class="customer mb-3">
+        <div class="inline-customer p-3">
+          <div class="row">
+            <div class="col-md-9">
+              <h5>{{ customer.name}}</h5>
+            </div>
+            <div class="col-md-3">
+              <a
+                class="text-white float-right"
+                data-toggle="collapse"
+                href="#collapseExample{{ forloop.counter }}"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample{{ forloop.counter }}"
+              >
+                <i class="fas fa-chevron-down"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card-body collapse text-white"
+          id="collapseExample{{ forloop.counter }}"
+        >
+          <h6><i class="fas fa-envelope px-2"></i>{{ customer.email }}</h6>
+          <h6><i class="fas fa-phone px-2"></i>{{ customer.phone_number }}</h6>
+          <h6>
+            <i class="fas fa-map-marker-alt px-2"></i>
+            {{customer.endereco.rua}}, {{ customer.endereco.bairro}}
+          </h6>
         </div>
       </div>
       {% endfor %}
     </div>
   </div>
+  {% endif %}
 </div>
 
 {% endblock %}

@@ -17,7 +17,7 @@ def customers(request):
     if 'nome' in request.GET:
         nome = request.GET['nome']
         if nome:
-            query_set= Customer.objects.filter(name=nome)
+            query_set= Customer.objects.filter(name__icontains=nome)
 
     context = {
         "customers": query_set,
