@@ -19,6 +19,7 @@ from django.urls import path
 
 from django.conf import settings
 from customer import views
+from encomendas.views import create_encomenda, list_encomendas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,6 @@ urlpatterns = [
     path('login/', views.login),
     path('equipe/', views.equipe),
     path('', views.main, name='index'),
+    path('createencomenda/', create_encomenda),
+    path('encomendas/', list_encomendas)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

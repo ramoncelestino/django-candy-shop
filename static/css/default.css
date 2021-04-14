@@ -201,16 +201,17 @@ hr {
 
 @font-face {
   font-family: 'Bw Darius';
-  src: url('../fonts/BwDariusDEMO-Regular.otf') format('otf');
+  src: url('../fonts/BwDariusDEMO-Bold.otf') format('otf');
 }
 
 .inline-customer {
-  background-color: #eaa49c;
-  color: #fff;
-  align-items: unset;
+  background-color: #cddfb2;
+  color: #555;
   border: 1px solid #eee;
+  align-items: center;
   padding: 5px 10px;
   border-radius: 10px;
+  width: 100%;
 }
 
 .all-customers {
@@ -225,6 +226,62 @@ hr {
 }
 
 .card-body {
-  background-color: #eaa49c;
+  background-color: #eef3eb;
+  color: #444;
   border-radius: 10px;
+}
+
+#icon-detail {
+  padding: 4px;
+  border-radius: 100px;
+  background-color: #666;
+}
+
+.image-user {
+  display: flex;
+  color: #444;
+  background-color: #eef3eb;
+  justify-content: center;
+  align-items: center;
+  border-radius: 150px;
+  width: 50px;
+  height: 50px;
+  padding-right: 2px;
+  border: 1px solid white;
+}
+
+.adjust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-show {
+  display: flex;
+  flex-direction: column;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px solid #ececec;
+  background-color: #eef3eb;
+  color: #555;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2px;
+}
+
+.date-show__month {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.date-show__year {
+  font-size: 0.75rem;
+  position: absolute;
+}
+
+.date-show__day {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

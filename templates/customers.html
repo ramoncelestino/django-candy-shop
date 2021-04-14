@@ -41,35 +41,40 @@
       {% for customer in customers %}
       <div class="customer mb-3">
         <div class="inline-customer p-3">
-          <div class="row">
-            <div class="col-md-9">
-              <h5>{{ customer.name}}</h5>
+          <div class="row px-2">
+            <div class="image-user">
+              <h5 class="text-center" id="sigla{{forloop.counter}}">RC</h5>
             </div>
-            <div class="col-md-3">
-              <a
-                class="text-white float-right"
-                data-toggle="collapse"
-                href="#collapseExample{{ forloop.counter }}"
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample{{ forloop.counter }}"
-              >
-                <i class="fas fa-chevron-down"></i>
-              </a>
-            </div>
+            <h5 class="adjust pl-3" id="customer-name{{forloop.counter}}">
+              {{ customer.name}}
+            </h5>
+            <a
+              class="ml-auto px-2 adjust"
+              style="color: #555"
+              data-toggle="collapse"
+              href="#collapseExample{{ forloop.counter }}"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample{{ forloop.counter }}"
+            >
+              <i class="fas fa-chevron-down"></i>
+            </a>
           </div>
         </div>
 
         <div
-          class="card-body collapse text-white"
+          class="card-body collapse"
           id="collapseExample{{ forloop.counter }}"
         >
           <h6><i class="fas fa-envelope px-2"></i>{{ customer.email }}</h6>
           <h6><i class="fas fa-phone px-2"></i>{{ customer.phone_number }}</h6>
+          {% if customer.endereco %}
           <h6>
             <i class="fas fa-map-marker-alt px-2"></i>
-            {{customer.endereco.rua}}, {{ customer.endereco.bairro}}
+            {{customer.endereco.rua}}, {{customer.endereco.numero}} - {{
+            customer.endereco.bairro}}
           </h6>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -77,5 +82,28 @@
   </div>
   {% endif %}
 </div>
+
+<script>
+  function changeSigla() {
+    for (i = 1; i < 5; i++) {
+      var s = 'sigla' + i;
+      var n = 'customer-name' + i;
+      console.log(s);
+
+      let sigla = document.querySelector('#' + s);
+      let name = document.querySelector('#' + n);
+      console.log(sigla);
+
+      var text = name.innerHTML
+        .split(' ')
+        .map((n) => n[0])
+        .join('');
+
+      sigla.innerHTML = text;
+    }
+  }
+
+  window.addEventListener('load', changeSigla);
+</script>
 
 {% endblock %}
