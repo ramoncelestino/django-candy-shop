@@ -2,6 +2,16 @@
 
 <div class="container">
   <h1 class="display-e py-3 my-3"></h1>
+  <form method="GET" action="/encomendas/">
+    <div class="form-group">
+      <label for="">Mês</label>
+      <input type="text" name="mes" />
+      <button type="submit" class="btn btn-primary">Procurar</button>
+    </div>
+  </form>
+  {% if mes %}
+  <h1>O mes de {{mes}}</h1>
+  {% endif %}
   <div class="all-customers">
     {% for encomenda in encomendas %}
     <div class="customer mb-3">

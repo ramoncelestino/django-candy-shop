@@ -25,9 +25,16 @@ def create_encomenda(request):
 
 def list_encomendas(request):
 
+    mes = 0
+
+    if 'mes' in request.GET:
+        mes = request.GET['mes']         
+
+
     encomendas = Encomenda.objects.order_by('data_entrega')
 
     context = {
+        'mes': mes,
         'encomendas': encomendas
     }
     return render(request, 'encomendas/list_encomendas.html', context)
