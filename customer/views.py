@@ -7,7 +7,7 @@ from enderecos.forms import EnderecoForm
 def customers(request):
 
 
-    query_set = Customer.objects.all()
+    query_set = Customer.objects.order_by('name')
 
     if 'phone' in request.GET:
         phone = request.GET['phone']

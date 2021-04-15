@@ -1,58 +1,69 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="container">
-  <h1 class="display-e py-3 my-3"></h1>
-  <form method="GET" action="/encomendas/">
-    <div class="form-group">
-      <label for="">Mês</label>
-      <input type="text" name="mes" />
-      <button type="submit" class="btn btn-primary">Procurar</button>
-    </div>
-  </form>
-  {% if mes %}
-  <h1>O mes de {{mes}}</h1>
-  {% endif %}
-  <div class="all-customers">
-    {% for encomenda in encomendas %}
-    <div class="customer mb-3">
-      <div class="inline-customer p-3">
-        <div class="row px-2">
-          <div class="date-show">
-            <div class="date-show__year">
-              <p>{{ encomenda.data_entrega |date:"Y" }}</p>
+  <div class="row pt-5 mt-5">
+    <div class="col-md-9 m-auto">
+      <div class="user-card">
+        <form method="GET" action="/encomendas/">
+          <div class="form-group">
+            <input class="form-control" type="text" name="mes" placeholder="Mês"/>
+          </div>
+            <div class="form-group">
+            <button type="submit" class="btn bg-viviane form-control text-white">Buscar</button>
+          </div>
+        </form>
+        </div>
+        </div>
+        </div>
+
+        {% if mes %}
+        <h1>O mes de {{mes}}</h1>
+        {% endif %}
+        <div class="all-customers">
+          {% for encomenda in encomendas %}
+          <div class="customer mb-3">
+            <div class="inline-customer">
+              <div class="row">
+                <div class="date-show">
+                  <div class="date-show__month">
+                    {% load i18n %} {% language 'pt' %}
+                    <p>{{ encomenda.data_entrega |date:"F" }}</p>
+                    {% endlanguage %}
+                  </div>
+                  <div class="date-show__day">
+                    <h4>{{encomenda.data_entrega |date:"d"}}</h4>
+                  </div>
+                </div>
+                <div class="adjust mx-4">
+                  <h6>{{encomenda.cliente.name}}</h6>
+                </div>
+                <a
+                  class="ml-auto px-2 adjust"
+                  style="color: #555"
+                  data-toggle="collapse"
+                  href="#collapseExample{{ forloop.counter }}"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample{{ forloop.counter }}"
+                >
+                  <i class="fas fa-chevron-down"></i>
+                </a>
+              </div>
             </div>
-            <div class="date-show__month">
-              {% load i18n %} {% language 'pt' %}
-              <p>{{ encomenda.data_entrega |date:"F" }}</p>
-              {% endlanguage %}
-            </div>
-            <div class="date-show__day">
-              <h4>{{encomenda.data_entrega |date:"d"}}</h4>
+            <div
+              class="card-body collapse mt-1"
+              id="collapseExample{{ forloop.counter }}"
+            >
+              <h6>2 Bolos Vulcão</h6>
+              <h6>4 palhas italianas</h6>
+              <h6>2 Torta alemãs</h6>
             </div>
           </div>
-          <div class="adjust mx-4">
-            <h6>{{encomenda.cliente.name}}</h6>
-          </div>
-          <a
-            class="ml-auto px-2 adjust"
-            style="color: #555"
-            data-toggle="collapse"
-            href="#collapseExample{{ forloop.counter }}"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample{{ forloop.counter }}"
-          >
-            <i class="fas fa-chevron-down"></i>
-          </a>
+          <hr />
+          {% endfor %}
         </div>
       </div>
-      <div class="card-body collapse" id="collapseExample{{ forloop.counter }}">
-        <h6>2 Bolos Vulcão</h6>
-        <h6>4 palhas italianas</h6>
-        <h6>2 Torta alemãs</h6>
-      </div>
+      {% endblock %}
     </div>
-    {% endfor %}
   </div>
 </div>
-{% endblock %}

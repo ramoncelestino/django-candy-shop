@@ -72,6 +72,14 @@
     ></script>
   </head>
   <body>
-    {% include 'navbar.html' %} {% block content %} {% endblock %}
+    {% include 'navbar.html' %} {%include 'sidebar.html' %} {% block content %}
+    {% endblock %}
   </body>
+  <script>
+    $(document).ready(function () {
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+      });
+    });
+  </script>
 </html>
