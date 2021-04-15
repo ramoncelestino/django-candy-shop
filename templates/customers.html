@@ -36,31 +36,27 @@
     </div>
   </div>
   {% if customers %}
-    <div class="all-customers">
-      {% for customer in customers %}
-      <div class="customer mb-3">
-        <div class="inline-customer">
-          <div class="row px-2">
-            <div class="image-user">
-              <h5 class="text-center" id="sigla{{forloop.counter}}"></h5>
-            </div>
-            <h5 class="adjust pl-3" id="customer-name{{forloop.counter}}">
-              {{ customer.name}}
-            </h5>
-            <a
-              class="ml-auto px-2 adjust"
-              style="color: #555"
-              data-toggle="collapse"
-              href="#collapseExample{{ forloop.counter }}"
-              role="button"
-              aria-expanded="false"
-              aria-controls="collapseExample{{ forloop.counter }}"
-            >
-              <i class="fas fa-chevron-down"></i>
-            </a>
+  <div class="all-customers">
+    {% for customer in customers %}
+    <a
+      class="px-2"
+      style="color: #555"
+      data-toggle="collapse"
+      href="#collapseExample{{ forloop.counter }}"
+      role="button"
+      aria-controls="collapseExample{{ forloop.counter }}"
+    >
+      <div class="inline-customer">
+        <div class="row px-2">
+          <div class="image-user">
+            <h5 class="text-center" id="sigla{{forloop.counter}}"></h5>
           </div>
-        </div>
+          <h6 class="adjust pl-3" id="customer-name{{forloop.counter}}">
+            {{ customer.name}}
+          </h6>
 
+          <i class="adjust ml-auto fas fa-chevron-down"></i>
+        </div>
         <div
           class="card-body collapse mt-1"
           id="collapseExample{{ forloop.counter }}"
@@ -76,9 +72,10 @@
           {% endif %}
         </div>
       </div>
-      <hr />
-      {% endfor %}
-    </div>
+    </a>
+
+    <hr />
+    {% endfor %}
   </div>
   {% endif %}
 </div>

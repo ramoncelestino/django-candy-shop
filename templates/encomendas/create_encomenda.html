@@ -10,8 +10,13 @@
           {% csrf_token %}
 
           <div class="form-row">
-            <div class="col-sm-12">
+            <div class="col-sm-11 col-xm-6">
               <div class="form-group">{{form.cliente}}</div>
+            </div>
+            <div class="col-sm-1 col-xm-6 adjust">
+              <button class="btn text-viviane" id="btn-create">
+                <i class="fas fa-plus-circle fa-2x"></i>
+              </button>
             </div>
           </div>
           <div class="form-row">
@@ -27,8 +32,8 @@
                   data-target="#datetimepicker1"
                   data-toggle="datetimepicker"
                 >
-                  <div class="input-group-text">
-                    <i class="fa fa-calendar"></i>
+                  <div class="input-group-text bg-pink">
+                    <i class="fa fa-calendar text-white"></i>
                   </div>
                 </div>
               </div>
@@ -45,8 +50,8 @@
                   data-target="#datetimepicker2"
                   data-toggle="datetimepicker"
                 >
-                  <div class="input-group-text">
-                    <i class="fa fa-calendar"></i>
+                  <div class="input-group-text bg-pink">
+                    <i class="fa fa-calendar text-white"></i>
                   </div>
                 </div>
               </div>

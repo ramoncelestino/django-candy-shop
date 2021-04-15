@@ -1,5 +1,11 @@
 body {
   background-color: #fff;
+  font-family: 'BwDariusDEMO-Bold';
+}
+
+@font-face {
+  font-family: 'Bw Darius';
+  src: url('../fonts/BwDariusDEMO-Bold.otf') format('otf');
 }
 
 :root {
@@ -145,7 +151,15 @@ body {
   color: #eaa49c;
 }
 
+.text-green {
+  color: var(--verdesecundario);
+}
+
 .bg-viviane {
+  background-color: #cddfb2;
+}
+
+.bg-pink {
   background-color: #eaa49c;
 }
 
@@ -190,8 +204,10 @@ body {
   background-color: #cddfb2;
   min-height: 500px;
 }
-hr {
+
+.all-customers hr {
   color: #fff;
+  margin: -20px 0;
 }
 
 .form-check-input .form-check-input:checked {
@@ -219,6 +235,10 @@ hr {
   width: 100%;
 }
 
+.inline-customer:hover {
+  background-color: #fffefe;
+}
+
 .all-customers {
   width: 100%;
   margin: auto;
@@ -227,7 +247,7 @@ hr {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 10px;
+  padding: 0 10px 20px 10px;
 }
 
 .card-body {
@@ -307,6 +327,7 @@ hr {
   background: var(--verdesecundario);
   color: #fff;
   transition: all 0.3s;
+  border: 1px solid var(--verdeprimario);
 }
 
 #sidebar.active {
@@ -358,11 +379,6 @@ a:focus {
   background: var(--verdeprimario);
 }
 
-#sidebar ul li.active > a,
-a[aria-expanded='true'] {
-  color: #fff;
-  background: var(--verdeprimario);
-}
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
@@ -373,4 +389,25 @@ ul ul a {
   border-color: #cddfb2;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(205, 223, 178, 0.6);
+}
+
+#btn-create {
+  position: relative;
+  top: -8px;
+}
+
+#btn-create:hover {
+  color: var(--verdeprimario);
+}
+
+.divide {
+  margin: 25px 0;
+
+  padding-top: 10px;
+}
+
+@media (min-width: 600px) {
+  .all-customers {
+    width: 60%;
+  }
 }
