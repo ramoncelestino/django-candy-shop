@@ -25,10 +25,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('customers/', views.customers, name='customers'),
     path('details/', views.details),
-    path('createcustomer/', views.create_customer),
+    path('customers/create', views.create_customer),
     path('login/', views.login),
     path('equipe/', views.equipe),
     path('', views.main, name='index'),
-    path('createencomenda/', create_encomenda),
+    path('encomenda/create', create_encomenda),
     path('encomendas/', list_encomendas)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
